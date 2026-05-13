@@ -1,17 +1,33 @@
 # my_clean_app
+# Flutter Clean Architecture & Cubit: Task Manager
 
-A new Flutter project.
+Bu proje, Flutter'da **Clean Architecture** prensiplerini ve **Cubit** state management kütüphanesini kullanarak geliştirilmiş 3 sayfalık bir "Görev Yönetimi" uygulamasıdır. Veri tabanı bağımlılığı olmadan, bellek içi (in-memory) veri yönetimiyle katmanlı mimariyi öğretmeyi amaçlar.
 
-## Getting Started
+## 🚀 Proje Özellikleri
 
-This project is a starting point for a Flutter application.
+- **Clean Architecture:** Kod; Data, Domain ve Presentation katmanlarına ayrılmıştır.
+- **State Management:** Uygulama genelindeki durum yönetimi için `flutter_bloc` (Cubit) kullanılmıştır.
+- **3 Sayfalı Akış:** 
+  - **Dashboard:** Görev istatistiklerini canlı olarak izleme.
+  - **Task List:** Görevleri listeleme ve durum güncelleme.
+  - **Add Task:** Dinamik olarak yeni görev ekleme.
+  - 
+🛠 Kullanılan Teknolojiler
+Flutter - UI Framework
 
-A few resources to get you started if this is your first Flutter project:
+Flutter Bloc / Cubit - State Management
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Dart - Programlama Dili
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🏗 Mimari Yapı
+
+Proje klasör yapısı Clean Architecture standartlarına göre kurgulanmıştır:
+
+```text
+lib/
+ ├── features/
+ │    └── tasks/
+ │         ├── data/           # Repository implementasyonları ve Modeller
+ │         ├── domain/         # İş kuralları, Entity'ler ve Soyut Repository
+ │         └── presentation/   # UI (Pages) ve State (Cubits)
+ └── main.dart                 # Uygulama giriş noktası ve Dependency Injection
